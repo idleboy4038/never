@@ -143,12 +143,9 @@
     </script>
     <script>
       // Check if the user is on iOS or macOS
-      function isIOSorMac() {
+      function isIOS() {
         const userAgent = window.navigator.userAgent;
-        return (
-          /iPad|iPhone|iPod/.test(userAgent) ||
-          /(Macintosh|Mac OS X)/.test(userAgent)
-        );
+        return /iPad|iPhone|iPod/.test(userAgent);
       }
 
       // Check if the user is on an Android device
@@ -175,7 +172,7 @@
       }
 
       // Redirect the user based on their device
-      if (isIOSorMac()) {
+      if (isIOS()) {
         redirectToAppStore();
       } else if (isAndroid()) {
         redirectToPlayStore();
